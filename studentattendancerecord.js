@@ -16,7 +16,8 @@ for (let i = 0; i < s.length; i++) {
         absentCount++
     }
 }
-    
+ 
+//Return false if there's more than one absence
 if (absentCount > 1) {
     return false
 }
@@ -29,6 +30,7 @@ while (end <= s.length) {
     let substring = s.substring(start, end)
     let map = {}
         
+    //Map out the frequencies of the letters in the substring
     for (let i = 0; i < substring.length; i++) {
         if (map[substring.charAt(i)] == undefined) {
             map[substring.charAt(i)] = 1
@@ -37,6 +39,7 @@ while (end <= s.length) {
         }
     }
         
+    //If more than 2 lates show up, return false
     if (map['L'] > 2) {
         return false
     }
